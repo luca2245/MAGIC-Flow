@@ -17,7 +17,6 @@ It is designed for challenging domains such as **medical imaging**, where robust
 - **Likelihood-based classification**: Classify images by evaluating class-conditional likelihoods.
 - **Modular pipeline**: Separate generation and classification notebooks while preserving the same flow-based framework.
 - **Application-specific masking**: Use custom masks designed for the tasks described in the paper.
-- **Medical imaging-oriented design**: Built for data-limited and clinically relevant imaging scenarios.
 
 ---
 
