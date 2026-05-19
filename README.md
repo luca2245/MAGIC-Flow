@@ -1,9 +1,8 @@
 # MAGIC-Flow
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.9%2B-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-orange)
 ![Medical%20Imaging](https://img.shields.io/badge/Domain-Medical%20Imaging-lightgrey)
-![Status](https://img.shields.io/badge/Status-Research%20Code-yellow)
 
 **MAGIC-Flow** is a conditional multiscale normalizing flow model that performs **both image generation and classification** within a single modular framework.
 
