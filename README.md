@@ -1,33 +1,71 @@
 # MAGIC-Flow
 
-**MAGIC-Flow** is a conditional multiscale normalizing flow model that performs **both image generation and classification** within a single modular framework. It is specifically designed to handle challenging domains like medical imaging, where robust generative and discriminative capabilities are crucial.  
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-orange)
+![Medical%20Imaging](https://img.shields.io/badge/Domain-Medical%20Imaging-lightgrey)
+![Status](https://img.shields.io/badge/Status-Research%20Code-yellow)
+
+**MAGIC-Flow** is a conditional multiscale normalizing flow model that performs **both image generation and classification** within a single modular framework.
+
+It is designed for challenging domains such as **medical imaging**, where robust generative and discriminative capabilities are crucial.
 
 ---
 
 ## Features
 
-- **Generative modeling**: Generate high-quality, diverse samples conditioned on class labels.  
+- **Conditional image generation**: Generate high-quality and diverse samples conditioned on class labels.
 - **Synthetic dataset generation**: Create and save new datasets using the generation module.
-- **Classification**: Predict class probabilities using the same flow-based framework.    
-- **Likelihood attribution maps**: Visualize which regions of an image contribute most to classification predictions.  
+- **Likelihood-based classification**: Classify images by evaluating class-conditional likelihoods.
+- **Modular pipeline**: Separate generation and classification notebooks while preserving the same flow-based framework.
+- **Application-specific masking**: Use custom masks designed for the tasks described in the paper.
+- **Medical imaging-oriented design**: Built for data-limited and clinically relevant imaging scenarios.
+
+---
+
+## Repository Structure
+
+```text
+MAGIC-Flow/
+├── README.md
+│
+├── classification/
+│   ├── coupling_layer_cls.ipynb
+│   ├── data_loader.ipynb
+│   ├── magic_flow_model.ipynb
+│   ├── testing.ipynb
+│   └── training.ipynb
+│
+├── generation/
+│   ├── coupling_layer_gen.ipynb
+│   ├── data_loader.ipynb
+│   ├── magic_flow_model.ipynb
+│   ├── testing.ipynb
+│   └── training.ipynb
+│
+└── custom_png/
+    ├── coronal_slice_110_rotated.png
+    └── seg_coronal_mask_padded.png
+```
 
 ---
 
 ## Folder Structure
 
-The repository contains **two main folders**:
+The repository contains three main folders:
 
-1. **`generation/`**:  
-   - Train generative models.  
-   - Generate new samples conditioned on class labels.  
-   - Generate and save synthetic datasets.  
-   - Use the **training script** for training and the **testing script** for inference and generation.
+1. **`generation/`**  
+   - Train generative models.
+   - Generate new samples conditioned on class labels.
+   - Generate and save synthetic datasets.
+   - Use `training.ipynb` for training and `testing.ipynb` for inference and generation.
 
-2. **`classification/`**:  
-   - Train classification models.  
-   - Assess prediction accuracy on validation/test sets.  
-   - Visualize likelihood attribution maps for interpretability.  
-   - Use the **training script** for model training and the **testing script** for evaluation.
+2. **`classification/`**  
+   - Train classification models.
+   - Evaluate prediction performance on validation/test sets.
+   - Use `training.ipynb` for model training and `testing.ipynb` for evaluation.
+
+3. **`custom_png/`**  
+   - Contains application-specific masks used for the tasks described in the paper.
 
 ---
 
@@ -58,3 +96,6 @@ dataset/
     │   └── ...
     └── ...
 ```
+
+Each split — `train`, `val`, and `test` — must contain one subfolder per class.  
+The class folder names are used as labels.
